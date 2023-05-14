@@ -9,10 +9,10 @@ let SALT_ROUNDS = 12;
 let TOKEN_KEY = "thisisastring";
 
 // for production
-if (process.env.NODE_ENV === "production") {
-  SALT_ROUNDS = Number(process.env.SALT_ROUNDS);
-  TOKEN_KEY = process.env.TOKEN_KEY;
-}
+// if (process.env.NODE_ENV === "production") {
+//   SALT_ROUNDS = Number(process.env.SALT_ROUNDS);
+//   TOKEN_KEY = process.env.TOKEN_KEY;
+// }
 
 // for JWT expiration
 const today = new Date();

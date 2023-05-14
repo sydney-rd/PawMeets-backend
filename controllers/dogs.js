@@ -1,22 +1,27 @@
 import jwt from "jsonwebtoken";
 import Dog from "../models/Dog.js";
+import dotenv from "dotenv";
+dotenv.config();
+
+let TOKEN_KEY = "thisisastring";
 
 export const getDogs = async (req, res) => {
   try {
-    const token = req.headers.authorization.split(" ")[1];
-    const user = jwt.verify(token, process.env.TOKEN_KEY);
+    console.log(req.headers)
+    const token = req.headers.auth.split(" ")[1];
+    const user = jwt.verify(token, TOKEN_KEY);
 
     const dogs = await Dog.find({ user: { $ne: user._id } }).populate("user");
     res.json(dogs);
   } catch (error) {
     console.log(error.message);
-    res.staus(500).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 
 export const getUserDogs = async (req, res) => {
   try {
-    const token = req.headers.authorization.split(" ")[1];
+    const token = req.headers.auth.split(" ")[1];
     const user = jwt.verify(token, process.env.TOKEN_KEY);
 
     const dogs = await Dog.find({ user: { $eq: user._id } });
