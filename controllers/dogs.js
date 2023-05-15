@@ -8,10 +8,10 @@ let TOKEN_KEY = "thisisastring";
 export const getDogs = async (req, res) => {
   try {
     console.log(req.headers)
-    const token = req.headers.auth.split(" ")[1];
+    const token = req.headers.authorization.split(" ")[1];
     const user = jwt.verify(token, TOKEN_KEY);
 
-    const dogs = await Dog.find({ user: { $ne: user._id } }).populate("user");
+    const dogs = await Dog.find({ user: { $ne: user.id } }).populate("user");
     res.json(dogs);
   } catch (error) {
     console.log(error.message);
@@ -21,14 +21,15 @@ export const getDogs = async (req, res) => {
 
 export const getUserDogs = async (req, res) => {
   try {
-    const token = req.headers.auth.split(" ")[1];
-    const user = jwt.verify(token, process.env.TOKEN_KEY);
+    const token = req.headers.authorization.split(" ")[1];
+    const user = jwt.verify(token, TOKEN_KEY);
+    console.log(user)
 
-    const dogs = await Dog.find({ user: { $eq: user._id } });
+    const dogs = await Dog.find({ user: { $eq: user.id } });
     res.json(dogs);
   } catch (error) {
     console.log(error.message);
-    res.staus(500).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 
