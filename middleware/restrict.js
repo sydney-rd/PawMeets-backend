@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import jwt from "jsonwebtoken";
 
-const TOKEN_KEY = process.env.TOKEN_KEY;
+const TOKEN_KEY = process.env.TOKEN_KEY || "thisisastring";
 
 const restrict = (req, res, next) => {
   try {

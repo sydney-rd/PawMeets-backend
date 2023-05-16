@@ -7,7 +7,6 @@ let TOKEN_KEY = "thisisastring";
 
 export const getDogs = async (req, res) => {
   try {
-    console.log(req.headers)
     const token = req.headers.authorization.split(" ")[1];
     const user = jwt.verify(token, TOKEN_KEY);
 
