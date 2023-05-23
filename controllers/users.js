@@ -48,6 +48,7 @@ export const signUp = async (req, res) => {
 export const signIn = async (req, res) => {
   try {
     const { username, password } = req.body; // Only extract username and password
+    console.log(username, password)
     const user = await User.findOne({ username: username }).select(
       "username password_digest"
     );

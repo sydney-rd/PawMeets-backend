@@ -10,13 +10,15 @@ export const getDogs = async (req, res) => {
     const token = req.headers.authorization.split(" ")[1];
     const user = jwt.verify(token, TOKEN_KEY);
 
-    const dogs = await Dog.find({ user: { $ne: user.id } }).populate("user");
+    const dogs = await Dog.find({ user: { $ne: user.id }
+     }).populate("user");
     res.json(dogs);
   } catch (error) {
     console.log(error.message);
     res.status(500).json({ error: error.message });
   }
 };
+
 
 export const getUserDogs = async (req, res) => {
   try {
@@ -46,7 +48,7 @@ export const getDog = async (req, res) => {
 export const createDog = async (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
-    const user = jwt.verify(token, process.env.TOKEN_KEY);
+    const user = jwt.verify(token, TOKEN_KEY);
 
     const dog = new Dog({
       ...req.body,
@@ -106,3 +108,19 @@ export const likeDog = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const messageDog = async (req, res) => {
+  try {
+    const { id, message } = req.params;
+
+    const dog = await Dog.findByIdAndUpdate(
+      id,
+      { $push: { messages: message } },
+    );
+
+    res.status(201).json(dog);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+}

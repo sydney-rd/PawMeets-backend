@@ -11,7 +11,8 @@ const DogSchema = new Schema({
   personality: { type: [String] },
   image: { type: String },
   likes: [{ type: Schema.Types.ObjectId, ref: "dogs" }],
-  user: { type: Schema.Types.ObjectId, ref: "users" }
+  user: { type: Schema.Types.ObjectId, ref: "users" },
+  messages: { type: [String] }
 });
 
 export default mongoose.model("dogs", DogSchema);
