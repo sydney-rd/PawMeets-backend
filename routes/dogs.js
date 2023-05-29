@@ -6,18 +6,22 @@ import {
   getDog,
   createDog,
   likeDog,
+  messageDog,
   updateDog,
   deleteDog,
+  getDogBreeds,
 } from "../controllers/dogs.js";
 
 const router = Router();
 
 router.get("/", getDogs); // All dogs minus current user's dogs (filtered)
-router.get("/userdogs", getUserDogs); // All dogs pertaining to current user
+router.get("/user/dogs", getUserDogs); // All dogs pertaining to current user
 router.get("/:id", getDog);
+router.get("/breeds/getBreeds", getDogBreeds);
 router.post("/", createDog);
-router.put("/:id", restrict, updateDog);
 router.post("/delete/:dogId", restrict, deleteDog);
-router.put("/like/:id", restrict, likeDog);
+router.post("/message", messageDog);
+router.put("/:id/update", restrict, updateDog);
+router.put("/:id/like", restrict, likeDog);
 
 export default router;

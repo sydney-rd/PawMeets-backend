@@ -3,14 +3,48 @@ import db from "./db/connection.js";
 import routes from "./routes/index.js";
 import cors from "cors";
 import logger from "morgan";
+import multer from "multer";
+import cloudinary from "cloudinary";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Multer configuration for file upload
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 app.use(express.json());
 app.use(cors());
 app.use(logger("dev"));
 
+// Define your route handlers
+app.post("/upload", upload.single("image"), (req, res) => {
+  // Your image upload logic here
+  // ...
+
+  // Example response
+  res.send("Image uploaded successfully");
+});
+
+// Use your routes
 app.use("/", routes);
 
 db.on("connected", () => {
