@@ -13,7 +13,8 @@ const ConversationSchema = new Schema({
 })
 
 const DogSchema = new Schema({
-  breed: [{ type: String }],  
+  breed: [{ type: String,
+            enum: ["Akita", "Pitbull", "Beagle"] }],  
   name: { type: String },
   age: { type: String },
   about: { type: String },
