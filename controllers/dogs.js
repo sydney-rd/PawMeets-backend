@@ -1,4 +1,4 @@
-import { Dog, DogBreedsModel } from "../models/Dog.js";
+import Dog from "../models/Dog.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
@@ -50,19 +50,6 @@ export const getDog = async (req, res) => {
   }
 };
 
-export const getDogBreeds = async (req, res) => {
-  console.log("get dog breeds")
-  try {
-    const dogBreeds = await DogBreedsModel.find();
-    console.log(dogBreeds)
-    res.json(dogBreeds);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: error.message });
-  }
-};
-
-
 export const createDog = async (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
@@ -81,6 +68,7 @@ export const createDog = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+  
 
 export const updateDog = async (req, res) => {
   try {

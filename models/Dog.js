@@ -1,9 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 
-const DogBreedsSchema = new Schema({
-  name: String
-})
-
 const MessageSchema = new Schema({
   content: { type: String },
   date: { type: Date },
@@ -17,7 +13,7 @@ const ConversationSchema = new Schema({
 })
 
 const DogSchema = new Schema({
-  breed: { type: Schema.Types.ObjectId, ref: "dogBreeds" },  
+  breed: [{ type: String }],  
   name: { type: String },
   age: { type: String },
   about: { type: String },
@@ -29,9 +25,5 @@ const DogSchema = new Schema({
   conversation: [ ConversationSchema ]
 });
 
-
-const DogBreedsModel = mongoose.model("dogBreeds", DogBreedsSchema);
-const Dog = mongoose.model("dogs", DogSchema);
-export {DogBreedsModel, Dog}
-
+export default mongoose.model("dogs", DogSchema);
 
