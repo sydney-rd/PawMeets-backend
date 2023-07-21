@@ -9,9 +9,7 @@ export const getDogs = async (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
     const user = jwt.verify(token, TOKEN_KEY);
-
     const likedDogs = await Dog.find({ likes: user.id }, { _id: 1 });
-
     const dogs = await Dog.find({
       user: { $ne: user.id },
       _id: { $nin: likedDogs.map(dog => dog._id) }
@@ -23,7 +21,6 @@ export const getDogs = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
 
 export const getUserDogs = async (req, res) => {
   try {
@@ -38,6 +35,7 @@ export const getUserDogs = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
 
 export const getDog = async (req, res) => {
   try {

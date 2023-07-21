@@ -3,28 +3,79 @@ import mongoose, { Schema } from "mongoose";
 const MessageSchema = new Schema({
   content: { type: String },
   date: { type: Date },
-  dogId: { type: Schema.Types.ObjectId}
-})
+  dogId: { type: Schema.Types.ObjectId },
+});
 
 const ConversationSchema = new Schema({
   currentDogId: { type: Schema.Types.ObjectId, ref: "dogs" },
-  likedDogId: { type: Schema.Types.ObjectId, ref: "dogs"},
-  messages: [ MessageSchema ]
-})
+  likedDogId: { type: Schema.Types.ObjectId, ref: "dogs" },
+  messages: [MessageSchema],
+});
 
 const DogSchema = new Schema({
-  breed: [{ type: String,
-            enum: ["Akita", "Pitbull", "Beagle"] }],  
+  breed: [
+    {
+      type: String,
+      enum: [
+        "Akita",
+        "Australian Shepherd",
+        "Beagle",
+        "Bernese Mountain Dog",
+        "Bichon Frise",
+        "Border Collie",
+        "Boxer",
+        "Bulldog",
+        "Bullmastiff",
+        "Cane Corso",
+        "Cavalier King Charles Spaniel",
+        "Chihuahua",
+        "Cocker Spaniel",
+        "Dachshund",
+        "Dalmatian",
+        "Doberman Pinscher",
+        "English Bulldog",
+        "French Bulldog",
+        "German Shepherd",
+        "German Shorthaired Pointer",
+        "Golden Retriever",
+        "Goldendoodle",
+        "Great Dane",
+        "Greyhound",
+        "Husky",
+        "Havanese",
+        "Labrador Retriever",
+        "Maltese",
+        "Miniature Schnauzer",
+        "Newfoundland",
+        "Pembroke Welsh Corgi",
+        "Pitbull",
+        "Pomeranian",
+        "Poodle",
+        "Pug",
+        "Russian Toy",
+        "Rottweiler",
+        "Saint Bernard",
+        "Samoyed",
+        "Schnauzer",
+        "Shetland Sheepdog",
+        "Shih Tzu",
+        "Siberian Husky",
+        "Staffordshire Bull Terrier",
+        "Vizsla",
+        "Weimaraner",
+        "West Highland White Terrier",
+        "Yorkshire Terrier",
+      ],
+    },
+  ],
   name: { type: String },
   age: { type: String },
   about: { type: String },
   gender: { type: String },
-  personality: [{ type: String }],
   image: { type: String },
   likes: [{ type: Schema.Types.ObjectId, ref: "dogs" }],
   user: { type: Schema.Types.ObjectId, ref: "users" },
-  conversation: [ ConversationSchema ]
+  conversation: [ConversationSchema],
 });
 
 export default mongoose.model("dogs", DogSchema);
-

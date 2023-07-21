@@ -22,11 +22,17 @@ exp.setDate(today.getDate() + 30);
 export const signUp = async (req, res) => {
   try {
     const { username, password, email } = req.body;
+    if (await User.findOne({ username: username })) {
+      res.status(400).json({ error: "This username already exists." });
+      return;
+    } 
+    
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
+
     const user = new User({
       username,
       password_digest,
-      email
+      email,
     });
 
     await user.save();
@@ -48,7 +54,7 @@ export const signUp = async (req, res) => {
 export const signIn = async (req, res) => {
   try {
     const { username, password } = req.body; // Only extract username and password
-    console.log(username, password)
+    console.log(username, password);
     const user = await User.findOne({ username: username }).select(
       "username password_digest"
     );
