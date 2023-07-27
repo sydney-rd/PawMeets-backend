@@ -7,26 +7,38 @@ const insertData = async () => {
   await db.dropDatabase();
 
   const user1 = new User({
-    username: "Syd",
+    username: "Syd123",
     email: "syd@email.com",
     password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
   });
 
   const user2 = new User({
-    username: "Adam",
+    username: "Adam123",
     email: "adam@email.com",
     password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
   });
 
   const user3 = new User({
-    username: "Coby",
+    username: "Coby123",
     email: "Coby@email.com",
     password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
   });
 
   const user4 = new User({
-    username: "Pavlos",
+    username: "Pavlos123",
     email: "Pavlos@email.com",
+    password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
+  });
+
+  const user5 = new User({
+    username: "Amanda123",
+    email: "Amanda@email.com",
+    password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
+  });
+
+  const user6 = new User({
+    username: "Melissa123",
+    email: "Melissa@email.com",
     password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
   });
 
@@ -34,6 +46,9 @@ const insertData = async () => {
   await user2.save();
   await user3.save();
   await user4.save();
+  await user5.save();
+  await user6.save();
+
 
   const dog1 = new Dog({
     breed: "Pitbull",
@@ -155,6 +170,43 @@ const insertData = async () => {
     user: user4,
   });
 
+  const dog11 = new Dog({
+    breed: "Samoyed",
+    name: "Wynter",
+    age: 9,
+    about: "Hey there! I'm the adventurous spirit you've been waiting for! Fearless and outgoing, I embrace every opportunity to meet new friends. My tail's always wagging to spread happiness, and I'll lead you on exciting journeys, making unforgettable memories.",
+    gender: "F",
+    image:
+      "https://cdn.britannica.com/86/235886-050-2A7CC649/Samoyed-dog.jpg",
+    likes: [],
+    user: user5,
+  });
+
+  const dog12 = new Dog({
+    breed: "Newfoundland",
+    name: "Jasper",
+    age: 2,
+    about: "Woof! I'm a brainy pup with a love for learning. Training and tricks are my passion, and I'll impress you with my cleverness. Puzzles are a breeze for me, and I crave mental stimulation. Together, we'll conquer challenges and become an unbeatable team!",
+    gender: "M",
+    image:
+      "https://images.fineartamerica.com/images/artworkimages/medium/3/beautiful-fluffy-faced-sweet-brown-newfoundland-dog-dejavu-designs.jpg",
+    likes: [],
+    user: user5,
+  });
+
+  const dog13 = new Dog({
+    breed: "Dachshund",
+    name: "Hot Dog",
+    age: 4,
+    about: "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+    gender: "M",
+    image:
+      "https://youdidwhatwithyourweiner.com/wp-content/uploads/2021/04/Depositphotos_198357474_Roverus-800x534.jpg",
+    likes: [],
+    user: user6,
+  });
+
+
   await dog1.save();
   await dog2.save();
   await dog3.save();
@@ -165,6 +217,9 @@ const insertData = async () => {
   await dog8.save();
   await dog9.save();
   await dog10.save();
+  await dog11.save();
+  await dog12.save();
+  await dog13.save();
 
   db.close();
 };
