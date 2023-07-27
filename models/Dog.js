@@ -27,7 +27,6 @@ const DogSchema = new Schema({
         "Bulldog",
         "Bullmastiff",
         "Cane Corso",
-        "Cavalier King Charles Spaniel",
         "Chihuahua",
         "Cocker Spaniel",
         "Dachshund",

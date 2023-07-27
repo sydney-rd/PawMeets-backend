@@ -42,13 +42,19 @@ const insertData = async () => {
     password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
   });
 
+  const user7 = new User({
+    username: "Allison123",
+    email: "Allison@email.com",
+    password_digest: await bcrypt.hash("!a$ecureP@ssword55!", 11),
+  });
+
   await user1.save();
   await user2.save();
   await user3.save();
   await user4.save();
   await user5.save();
   await user6.save();
-
+  await user7.save();
 
   const dog1 = new Dog({
     breed: "Pitbull",
@@ -174,10 +180,10 @@ const insertData = async () => {
     breed: "Samoyed",
     name: "Wynter",
     age: 9,
-    about: "Hey there! I'm the adventurous spirit you've been waiting for! Fearless and outgoing, I embrace every opportunity to meet new friends. My tail's always wagging to spread happiness, and I'll lead you on exciting journeys, making unforgettable memories.",
+    about:
+      "Hey there! I'm the adventurous spirit you've been waiting for! Fearless and outgoing, I embrace every opportunity to meet new friends. My tail's always wagging to spread happiness, and I'll lead you on exciting journeys, making unforgettable memories.",
     gender: "F",
-    image:
-      "https://cdn.britannica.com/86/235886-050-2A7CC649/Samoyed-dog.jpg",
+    image: "https://cdn.britannica.com/86/235886-050-2A7CC649/Samoyed-dog.jpg",
     likes: [],
     user: user5,
   });
@@ -186,7 +192,8 @@ const insertData = async () => {
     breed: "Newfoundland",
     name: "Jasper",
     age: 2,
-    about: "Woof! I'm a brainy pup with a love for learning. Training and tricks are my passion, and I'll impress you with my cleverness. Puzzles are a breeze for me, and I crave mental stimulation. Together, we'll conquer challenges and become an unbeatable team!",
+    about:
+      "Woof! I'm a brainy pup with a love for learning. Training and tricks are my passion, and I'll impress you with my cleverness. Puzzles are a breeze for me, and I crave mental stimulation. Together, we'll conquer challenges and become an unbeatable team!",
     gender: "M",
     image:
       "https://images.fineartamerica.com/images/artworkimages/medium/3/beautiful-fluffy-faced-sweet-brown-newfoundland-dog-dejavu-designs.jpg",
@@ -198,7 +205,8 @@ const insertData = async () => {
     breed: "Dachshund",
     name: "Hot Dog",
     age: 4,
-    about: "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+    about:
+      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
     gender: "M",
     image:
       "https://youdidwhatwithyourweiner.com/wp-content/uploads/2021/04/Depositphotos_198357474_Roverus-800x534.jpg",
@@ -206,6 +214,70 @@ const insertData = async () => {
     user: user6,
   });
 
+  const dog14 = new Dog({
+    breed: "Schnauzer",
+    name: "Jan",
+    age: 4,
+    about:
+      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+    gender: "M",
+    image:
+      "https://www.thesprucepets.com/thmb/mImr5tbxxGPir437MI7jnkhxNro=/2121x0/filters:no_upscale():strip_icc()/MiniatureSchnauzerpuppy-GettyImages-1012208262-b1995bca76a5488fa3feec8b10871ddb.jpg",
+    likes: [],
+    user: user6,
+  });
+
+  const dog15 = new Dog({
+    breed: "Schnauzer",
+    name: "Jan",
+    age: 4,
+    about:
+      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+    gender: "M",
+    image:
+      "https://www.thesprucepets.com/thmb/mImr5tbxxGPir437MI7jnkhxNro=/2121x0/filters:no_upscale():strip_icc()/MiniatureSchnauzerpuppy-GettyImages-1012208262-b1995bca76a5488fa3feec8b10871ddb.jpg",
+    likes: [],
+    user: user6,
+  });
+
+  const dog16 = new Dog({
+    breed: "Border Collie",
+    name: "Wispy",
+    age: 9,
+    about:
+      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+    gender: "F",
+    image:
+      "https://animalcorner.org/wp-content/uploads/2020/08/Border-Collie-2.jpg",
+    likes: [],
+    user: user7,
+  });
+
+  const dog17 = new Dog({
+    breed: "Chihuahua",
+    name: "Salsa",
+    age: 11,
+    about:
+      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+    gender: "F",
+    image:
+      "https://as2.ftcdn.net/v2/jpg/01/78/14/09/1000_F_178140976_uji9yyR68T9fV5uAHLCpyY15uijODUFy.jpg",
+    likes: [],
+    user: user7,
+  });
+
+  const dog18 = new Dog({
+    breed: "Havanese",
+    name: "Waffles",
+    age: 1,
+    about:
+      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+    gender: "F",
+    image:
+      "https://www.rover.com/blog/wp-content/uploads/iStock-520942487-min-e1649971013544.jpg",
+    likes: [],
+    user: user7,
+  });
 
   await dog1.save();
   await dog2.save();
@@ -220,6 +292,11 @@ const insertData = async () => {
   await dog11.save();
   await dog12.save();
   await dog13.save();
+  await dog14.save();
+  await dog15.save();
+  await dog16.save();
+  await dog17.save();
+  await dog18.save();
 
   db.close();
 };
