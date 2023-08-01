@@ -61,7 +61,7 @@ const insertData = async () => {
     name: "Queso",
     age: 4,
     about:
-      "Happy pittie who loves fast car-rides who is looking for a long-term mate",
+      "I am the happiest pittie who loves fast car-rides and getting zoomies in my backyard. I am looking for a long-term mate who is down for adventure, long walks on the weekend, and is ready to do tricks for treats!",
     gender: "M",
     image:
       "https://assets3.thrillist.com/v1/image/3096778/792x594/scale;webp=auto;jpeg_quality=60.jpg",
@@ -73,7 +73,8 @@ const insertData = async () => {
     breed: "Goldendoodle",
     name: "Taco",
     age: 2,
-    about: "I'll do tricks for treats, and I have the sofest fur for cuddling",
+    about:
+      "The name is fitting, my favorite day is taco tuesdays. Let's cook together, and watch a movie and cuddle. Plus, I have the sofest fur for cuddling...",
     gender: "F",
     image:
       "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F04%2F15%2Fgoldendoodle-running-on-beach-1723968841-2-2000.jpg",
@@ -86,7 +87,7 @@ const insertData = async () => {
     name: "Peaches",
     age: 2,
     about:
-      "Most people spell my name as 'Shitzu' but it's 'Shih Tzu'... yappy, cute and seeking a mate to calm me down!",
+      "Most people spell my name as 'Shitzu' but it's 'Shih Tzu'... yappy, cute and seeking a mate to calm me down. Looking to spend my time shopping, laying out in the sun, sipping water, and taking dips in the pool. If you are ready for lazy but fashionable days, you are in for a treat.",
     gender: "F",
     image:
       "https://i.guim.co.uk/img/media/f5d489803f880797e751e74374aef019ac96d09a/0_95_4200_2520/master/4200.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=3963f8b3fca619e904ccb686150d2fa0",
@@ -178,7 +179,7 @@ const insertData = async () => {
 
   const dog11 = new Dog({
     breed: "Samoyed",
-    name: "Wynter",
+    name: "Winter",
     age: 9,
     about:
       "Hey there! I'm the adventurous spirit you've been waiting for! Fearless and outgoing, I embrace every opportunity to meet new friends. My tail's always wagging to spread happiness, and I'll lead you on exciting journeys, making unforgettable memories.",
