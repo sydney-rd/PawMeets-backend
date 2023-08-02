@@ -9,12 +9,14 @@ import {
   messageDog,
   updateDog,
   deleteDog,
+  getUserDogsMatches,
 } from "../controllers/dogs.js";
 
 const router = Router();
 
 router.get("/", getDogs); // All dogs minus current user's dogs (filtered)
 router.get("/user/dogs", getUserDogs); // All dogs pertaining to current user
+router.get("/user/dogs/matches", getUserDogsMatches);
 router.get("/:id", getDog);
 router.post("/", createDog);
 router.post("/delete/:dogId", restrict, deleteDog);

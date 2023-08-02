@@ -12,7 +12,7 @@ export const getDogs = async (req, res) => {
     const likedDogs = await Dog.find({ likes: user.id }, { _id: 1 });
     const dogs = await Dog.find({
       user: { $ne: user.id },
-      _id: { $nin: likedDogs.map(dog => dog._id) }
+      _id: { $nin: likedDogs.map((dog) => dog._id) },
     }).populate("user");
 
     res.json(dogs);
@@ -26,7 +26,7 @@ export const getUserDogs = async (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
     const user = jwt.verify(token, TOKEN_KEY);
-    console.log(user)
+    console.log(user);
 
     const dogs = await Dog.find({ user: { $eq: user.id } });
     res.json(dogs);
@@ -36,12 +36,46 @@ export const getUserDogs = async (req, res) => {
   }
 };
 
-
 export const getDog = async (req, res) => {
   try {
     const { id } = req.params;
     const dog = await Dog.findById(id).populate("likes");
     res.json(dog);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getUserDogsMatches = async (req, res) => {
+  try {
+    const token = req.headers.authorization.split(" ")[1];
+    const user = jwt.verify(token, TOKEN_KEY);
+    const dogs = await Dog.find({ user: { $eq: user.id } }).populate("likes");
+
+    /** @type {[{dog: Dog, matches: [Dog]}]} */
+    const data = [];
+
+    for (let i = 0; i < dogs.length; i++) {
+      const dog = dogs[i];
+
+      const match = {
+        dog: dog,
+        matches: [],
+      };
+      data.push(match);
+
+      for (let j = 0; j < dog.likes.length; j++) {
+        const liked = dog.likes[i];
+
+        // If this is a match...
+        if (liked.likes.includes(dog.id)) {
+          match.matches.push(liked);
+        }
+      }
+    }
+
+    res.json(data);
   } catch (error) {
     console.log(error.message);
     res.status(500).json({ error: error.message });
@@ -66,7 +100,6 @@ export const createDog = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-  
 
 export const updateDog = async (req, res) => {
   try {
@@ -118,14 +151,13 @@ export const messageDog = async (req, res) => {
     const { id } = req.params;
     const { message } = req.body;
 
-    const dog = await Dog.findByIdAndUpdate(
-      id,
-      { $push: { messages: message } },
-    );
+    const dog = await Dog.findByIdAndUpdate(id, {
+      $push: { messages: message },
+    });
 
     res.status(201).json(dog);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
-}
+};
