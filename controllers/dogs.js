@@ -66,7 +66,7 @@ export const getUserDogsMatches = async (req, res) => {
       data.push(match);
 
       for (let j = 0; j < dog.likes.length; j++) {
-        const liked = dog.likes[i];
+        const liked = dog.likes[j];
 
         // If this is a match...
         if (liked.likes.includes(dog.id)) {
