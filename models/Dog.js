@@ -45,6 +45,7 @@ const DogSchema = new Schema({
         "Labrador Retriever",
         "Maltese",
         "Miniature Schnauzer",
+        "Mutt",
         "Newfoundland",
         "Pembroke Welsh Corgi",
         "Pitbull",
