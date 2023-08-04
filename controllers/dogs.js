@@ -36,6 +36,17 @@ export const getUserDogs = async (req, res) => {
   }
 };
 
+export const getDogBreeds = async (req, res) => {
+  try {
+    const dogBreeds = await Dog.distinct("breed");
+    res.json(dogBreeds);
+    console.log("dogbreed", dogBreeds);
+  } catch (error) {
+    console.error("Error fetching dog breeds:", error);
+    res.status(500).json({ error: "Failed to fetch dog breeds" });
+  }
+};
+
 export const getDog = async (req, res) => {
   try {
     const { id } = req.params;
@@ -138,22 +149,6 @@ export const likeDog = async (req, res) => {
       { $addToSet: { likes: req.body.likedDog } },
       { new: true }
     );
-
-    res.status(201).json(dog);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: error.message });
-  }
-};
-
-export const messageDog = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { message } = req.body;
-
-    const dog = await Dog.findByIdAndUpdate(id, {
-      $push: { messages: message },
-    });
 
     res.status(201).json(dog);
   } catch (error) {
