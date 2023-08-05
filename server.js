@@ -37,10 +37,6 @@ app.use(logger("dev"));
 
 // Define your route handlers
 app.post("/upload", upload.single("image"), (req, res) => {
-  // Your image upload logic here
-  // ...
-
-  // Example response
   res.send("Image uploaded successfully");
 });
 
