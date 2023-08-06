@@ -1,6 +1,6 @@
-import Dog from "../models/Dog.js";
-import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
+import Dog, { breeds } from "../models/Dog.js";
 dotenv.config();
 
 let TOKEN_KEY = "thisisastring";
@@ -38,9 +38,7 @@ export const getUserDogs = async (req, res) => {
 
 export const getDogBreeds = async (req, res) => {
   try {
-    const dogBreeds = await Dog.distinct("breed");
-    res.json(dogBreeds);
-    console.log("dogbreed", dogBreeds);
+    res.json(breeds);
   } catch (error) {
     console.error("Error fetching dog breeds:", error);
     res.status(500).json({ error: "Failed to fetch dog breeds" });
