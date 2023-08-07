@@ -146,7 +146,7 @@ const insertData = async () => {
     name: "Pepper",
     age: 8,
     about:
-      "I'm a little spicy, hence the name, Pepper 🌶️. I spent my life chasing my acting dreams and now I am retired and looking for a mate to live the rest of our lives together. BTW, you may have seen me in a few famous movies...",
+      "I'm a little spicy, hence the name, Pepper 🌶️. I spent my life chasing my acting dreams and now I am retired and looking for a mate to live our lives together. BTW, you may have seen me in a few famous movies...",
     gender: "F",
     image:
       "https://cdn.shopify.com/s/files/1/1415/0728/articles/download_2.jpg?v=1627313054",
@@ -185,7 +185,7 @@ const insertData = async () => {
     name: "Greece",
     age: 7,
     about:
-      "My owner is from Greece 🇬🇷. I was actually born in Greece, and moved to NYC when I was a puppy. I now spend my day's in Astoria, where I still get the taste of Greek culture. I'd love to take you out to a local restaurant!",
+      "My owner is from Greece 🇬🇷. I was actually born in Greece, and moved to NYC when I was a puppy. I now spend my day's in Astoria, where I still get a taste my culture. I'd love to take you out to a local restaurant!",
     gender: "M",
     image:
       "https://media.npr.org/assets/img/2022/11/23/russian-toy-2-002--059b8a825dac13f92234d65777e6b29b0914e92f-s1100-c50.jpg",
@@ -198,7 +198,7 @@ const insertData = async () => {
     name: "Winter",
     age: 9,
     about:
-      "I'm the adventurous spirit you've been waiting for! Fearless and outgoing, I embrace every opportunity to meet new friends. My tail's always wagging to spread happiness, and I'll lead you on exciting journeys, making unforgettable memories.",
+      "I'm the adventurous spirit you've been waiting for! I embrace every opportunity to meet new friends. My tail's always wagging to spread happiness, and I'll lead you on exciting journeys, making unforgettable memories.",
     gender: "F",
     image: "https://cdn.britannica.com/86/235886-050-2A7CC649/Samoyed-dog.jpg",
     likes: [],
@@ -210,7 +210,7 @@ const insertData = async () => {
     name: "Jasper",
     age: 2,
     about:
-      "I'm a brainy pup with a love for learning. Training and tricks are my passion. Puzzles are a breeze for me, and I crave mental stimulation. Together, we'll conquer challenges and become an unbeatable team, especially for treat puzzles!",
+      "I'm a brainy pup with a love for learning. Puzzles are a breeze for me, and I crave mental stimulation. Together, we'll conquer challenges and become an unbeatable team, especially for treat puzzles!",
     gender: "M",
     image:
       "https://images.fineartamerica.com/images/artworkimages/medium/3/beautiful-fluffy-faced-sweet-brown-newfoundland-dog-dejavu-designs.jpg",
@@ -223,7 +223,7 @@ const insertData = async () => {
     name: "Hot Dog",
     age: 4,
     about:
-      "I am Hot Dog, you'll find me being a couch potato, eating potato chips. My favorite shows are cooking shows and breaking bad. If you are a good cook - that is a major plus for me! I promise I'd eat all of your food to the last drop. What is your fav food?",
+      "I am Hot Dog, you'll find me being a couch potato, eating potato chips. My favorite shows are cooking shows and breaking bad. If you are a good cook - that is a major plus for me! I promise I'd eat all of your food to the last drop.",
     gender: "M",
     image:
       "https://youdidwhatwithyourweiner.com/wp-content/uploads/2021/04/Depositphotos_198357474_Roverus-800x534.jpg",
@@ -236,7 +236,7 @@ const insertData = async () => {
     name: "Jan",
     age: 4,
     about:
-      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion, making every moment more relaxing.",
+      "My mission in life is to be your ultimate cuddle buddy! I love being a lap dog, melting your heart with my warm snuggles and gentle eyes. Lazy days are my forte, and I'll be your loyal companion.",
     gender: "M",
     image:
       "https://www.thesprucepets.com/thmb/mImr5tbxxGPir437MI7jnkhxNro=/2121x0/filters:no_upscale():strip_icc()/MiniatureSchnauzerpuppy-GettyImages-1012208262-b1995bca76a5488fa3feec8b10871ddb.jpg",
@@ -249,7 +249,7 @@ const insertData = async () => {
     name: "Soup",
     age: 7,
     about:
-      "I was found roaming the streets of Brooklyn, until my owner, Melissa took me in as one of her own. Now I have walks everyday, go on adventures with my brothers, and hanging with my owner's friends dogs. I have so many friends so we will always have things to do.",
+      "I was found roaming the streets of Brooklyn, until my owner, Melissa took me in as one of her own. Now I have walks everyday, go on adventures with my brothers, and hanging with my owner's friends dogs.",
     gender: "F",
     image:
       "https://dogtime.com/wp-content/uploads/sites/12/gallery/mutt-dog-breed-pictures/face-1.jpg",
@@ -275,7 +275,7 @@ const insertData = async () => {
     name: "Salsa",
     age: 11,
     about:
-      "Looking to live the rest of my life by the lake. Looking to move with my owner and I to upstate, NY. We spent most of the summers by the lakehouse, hanging out by the fire, and watching movies and BBQing! Would love to meet someone down to earth to share this life with.",
+      "Looking to live the rest of my life by the lake. Looking to move with my owner and I to upstate, NY. We spent most of the summers by the lakehouse, hanging out by the fire, and watching movies and BBQing!",
     gender: "F",
     image:
       "https://as2.ftcdn.net/v2/jpg/01/78/14/09/1000_F_178140976_uji9yyR68T9fV5uAHLCpyY15uijODUFy.jpg",
