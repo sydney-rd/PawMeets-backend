@@ -29,12 +29,12 @@ export const signUp = async (req, res) => {
       return;
     }
 
-    if (await User.findOne({ email: email })) {
-      res
-        .status(400)
-        .json({ field: "email", message: "This email already exists." });
-      return;
-    }
+    // if (await User.findOne({ email: email })) {
+    //   res
+    //     .status(400)
+    //     .json({ field: "email", message: "This email already exists." });
+    //   return;
+    // }
 
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
 
