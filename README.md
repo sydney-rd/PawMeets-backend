@@ -18,7 +18,7 @@ Node.js: A JavaScript runtime used to execute server-side code.
 
 ## Object Content
 
-````const DogSchema = new Schema({
+```const DogSchema = new Schema({
   breed: [
     {
       type: String,
@@ -34,9 +34,9 @@ Node.js: A JavaScript runtime used to execute server-side code.
   image: { type: String },
   likes: [{ type: Schema.Types.ObjectId, ref: "dogs" }],
   user: { type: Schema.Types.ObjectId, ref: "users" },
-}); ```
+});
 
-``` const UserSchema = new Schema({
+ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
@@ -44,6 +44,6 @@ Node.js: A JavaScript runtime used to execute server-side code.
   },
   email: {type: String},
   password_digest: { type: String, required: true, select: false },
-}); ```
+});
 
-````
+```
