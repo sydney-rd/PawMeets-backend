@@ -94,7 +94,7 @@ const insertData = async () => {
     name: "Peaches",
     age: 2,
     about:
-      "Most people spell my name as 'Shitzu' but it's 'Shih Tzu'... yappy and seeking a mate to calm me down. Looking to spend my time shopping, laying out in the sun, and taking dips in the pool. If you are ready for lazy days, you are in for a treat.",
+      "Most people spell my name as 'Shitzu' but it's 'Shih Tzu'. Yappy and seeking a mate to calm me down. Looking to spend my time shopping, laying out in the sun, and pool days. If you are ready for lazy days, you are in for a treat.",
     gender: "Female",
     image:
       "https://woofspedia.com/wp-content/uploads/2021/10/Dogs-1-750x500.jpg",
@@ -198,7 +198,7 @@ const insertData = async () => {
     name: "Winter",
     age: 9,
     about:
-      "I'm the adventurous spirit you've been waiting for! I embrace every opportunity to meet new friends. My tail's always wagging to spread happiness, and I'll lead you on exciting journeys, making unforgettable memories.",
+      "I'm the adventurous spirit you've been waiting for! I embrace every opportunity to meet new friends. My tail's always wagging, and I'll lead you on exciting journeys, making unforgettable memories.",
     gender: "Female",
     image: "https://cdn.britannica.com/86/235886-050-2A7CC649/Samoyed-dog.jpg",
     likes: [],

@@ -30,6 +30,7 @@ export const breeds = [
   "Miniature Schnauzer",
   "Mutt",
   "Newfoundland",
+  "Other",
   "Pembroke Welsh Corgi",
   "Pitbull",
   "Pomeranian",

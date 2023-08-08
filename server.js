@@ -35,12 +35,11 @@ app.use(express.json());
 app.use(cors());
 app.use(logger("dev"));
 
-// Define your route handlers
+// route handlers
 app.post("/upload", upload.single("image"), (req, res) => {
   res.send("Image uploaded successfully");
 });
 
-// Use your routes
 app.use("/", routes);
 
 db.on("connected", () => {
