@@ -6,7 +6,9 @@ PawMeets™ is a dog dating app that helps dogs find compatible partners in New 
 
 PawMeets™ uses MongoDB and Express on the backend
 
-PawMeets™ is deployed on [Railway]https://paw-meets-api-production.up.railway.app/)
+PawMeets™ is deployed on [Railway](https://paw-meets-api-production.up.railway.app/)
+
+I will be adding more fun things to my README soon!
 
 ## Backend Functionality
 
@@ -47,3 +49,12 @@ Node.js: A JavaScript runtime used to execute server-side code.
 });
 
 ```
+
+## Frontend Functionality
+
+The frontend of PawMeets™ uses the following:
+
+- React: Used to create interactive UI components and manage the state and rendering of these components.
+- CSS: (Cascading Style Sheets) A stylesheet language used to define the visual presentation of HTML elements on a webpage.
+
+The GitHub frontend link is found [HERE](https://github.com/sydney-rd/paw-meets)
