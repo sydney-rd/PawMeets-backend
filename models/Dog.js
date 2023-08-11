@@ -52,12 +52,10 @@ export const breeds = [
 ];
 
 const DogSchema = new Schema({
-  breed: [
-    {
-      type: String,
-      enum: breeds,
-    },
-  ],
+  breed: {
+    type: String,
+    enum: breeds,
+  },
   name: { type: String },
   age: { type: String },
   about: { type: String },
